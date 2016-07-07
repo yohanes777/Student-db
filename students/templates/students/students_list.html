@@ -48,9 +48,9 @@
       <div class="row" id="sub-header">
           <div class="col-xs-12">
              <ul class="nav nav-tabs" role="tablist">
-				<li role="presentation" class="active"><a href="/">Студенти</a></li>
+				<li role="presentation" class="active"><a href="{%url "home"%}">Студенти</a></li>
 				<li role="presentation"><a href="/journal">Відвідування</a></li>
-				<li role="presentation"><a href="/groups">Групи</a></li>
+				<li role="presentation"><a href="{% url "groups" %}">Групи</a></li>
 			</ul>
           </div>
       </div>
@@ -61,7 +61,7 @@
           <div CLASS="col-xs-12" id="content-colum">
               <div class="alert alert-warning">Зміни скасовано.</div>
               <h2>База Студентів</h2>
-              <a class="btn btn-primary" href="/students/add">Додати Студента</a>
+              <a class="btn btn-primary" href="{% url "students_add" %}">Додати Студента</a>
 
               <div>
                   <table class="table table-hover table-striped" >
@@ -79,8 +79,8 @@
                        <tr>
                         <td>1</td>
                         <td><img height="30" width="30" class="img-circle" src="./img/me.jpeg"></td>
-                        <td><a title="Редагувати" href="/students/1/edit">Грибан</a></td>
-                        <td><a title="Редагувати" href="/students/1/edit">Вася</a></td>
+                        <td><a title="Редагувати" href="{% url "students_edit" 1 %}">Грибан</a></td>
+                        <td><a title="Редагувати" href="{% url "students_edit" 1 %}">Вася</a></td>
                         <td>4</td>
                         <td><div class="btn-group">
                             <button class="btn btn-default dropdown-toggle"type="button" data-toggle="dropdown">Дія
@@ -91,10 +91,10 @@
                                 <a href="/journal/1">Відвідування</a>
                               </li>
                               <li >
-                                <a href="/students/1/edit">Редагувати</a>
+                                <a href="{% url "students_edit" 1 %}">Редагувати</a>
                               </li>
                              <li >
-                                <a href="/students/1/delete">Видалити</a>
+                                <a href="{% url "students_delete" 1 %}">Видалити</a>
                              </li>
                             </ul>
 
@@ -152,7 +152,10 @@
  <!-- End Container-->
 
  <!--JS Section-->
-  <script src="https://code.jquery.com/jquery-3.0.0.slim.js"></script>
+  <script
+			  src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>"
  </body>
 </html>
