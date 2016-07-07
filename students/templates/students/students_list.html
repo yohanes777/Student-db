@@ -17,14 +17,19 @@
  </head>
 
  <body>
+
  <!--Start Container-->
   <div class="container">
+
       <!--Start Header-->
+
       <div class="row" id="header">
           <!--Logo-->
+
           <div class="col-xs-8">
               <h1>Сервіс обліку студентів</h1>
           </div>
+
           <!--Grous Selector-->
           <div class="col-xs-4" id="group-selector">
               <strong>Група:</strong>
@@ -36,15 +41,16 @@
           </div>
 
       </div>
+
       <!-- End Header-->
 
       <!--Start SubHeader-->
       <div class="row" id="sub-header">
           <div class="col-xs-12">
              <ul class="nav nav-tabs" role="tablist">
-				<li role="presentation" class="active"><a href="#">Студенти</a></li>
-				<li role="presentation"><a href="#">Відвідування</a></li>
-				<li role="presentation"><a href="#">Групи</a></li>
+				<li role="presentation" class="active"><a href="/">Студенти</a></li>
+				<li role="presentation"><a href="/journal">Відвідування</a></li>
+				<li role="presentation"><a href="/groups">Групи</a></li>
 			</ul>
           </div>
       </div>
@@ -55,7 +61,7 @@
           <div CLASS="col-xs-12" id="content-colum">
               <div class="alert alert-warning">Зміни скасовано.</div>
               <h2>База Студентів</h2>
-              <a class="btn btn-primary" href="#">Додати Студента</a>
+              <a class="btn btn-primary" href="/students/add">Додати Студента</a>
 
               <div>
                   <table class="table table-hover table-striped" >
@@ -73,26 +79,27 @@
                        <tr>
                         <td>1</td>
                         <td><img height="30" width="30" class="img-circle" src="./img/me.jpeg"></td>
-                        <td><a title="Редагувати" href="#">Грибан</a></td>
-                        <td><a title="Редагувати" href="#">Вася</a></td>
+                        <td><a title="Редагувати" href="/students/1/edit">Грибан</a></td>
+                        <td><a title="Редагувати" href="/students/1/edit">Вася</a></td>
                         <td>4</td>
-                        <td><div class="dropdown">
+                        <td><div class="btn-group">
                             <button class="btn btn-default dropdown-toggle"type="button" data-toggle="dropdown">Дія
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                              <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="#">Відвідування</a>
+                              <li >
+                                <a href="/journal/1">Відвідування</a>
                               </li>
-                              <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="#">Редагувати</a>
+                              <li >
+                                <a href="/students/1/edit">Редагувати</a>
                               </li>
-                             <li role="presentation">
-                                <a role="menuitem" tabindex="-1" href="#">Видалити</a>
+                             <li >
+                                <a href="/students/1/delete">Видалити</a>
                              </li>
                             </ul>
 
-                        </div></td>
+                            </div>
+                        </td>
                        </tr>
                       <tr>
                         <td>1</td>
@@ -100,7 +107,17 @@
                         <td>Грибан</td>
                         <td>Вася</td>
                         <td>4</td>
-                        <td>Дії</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                                    <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">HTML</a></li>
+                                                <li><a href="#">CSS</a></li>
+                                                    <li><a href="#">JavaScript</a></li>
+                                        </ul>
+                                </div>
+                        </td>
                        </tr>
                       </tbody>
                   </table>
@@ -135,9 +152,7 @@
  <!-- End Container-->
 
  <!--JS Section-->
- <script src="https://code.jquery.com/jquery-3.0.0.slim.js"
-			  integrity="sha256-Gp6hp0H+A7axg1tErCucWeOc38irtkVWpUbBZSj8KCg="
-			  crossorigin="anonymous"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>"
+  <script src="https://code.jquery.com/jquery-3.0.0.slim.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>"
  </body>
 </html>
