@@ -1,71 +1,13 @@
+{% extends "students/base.html" %}
+
 {% load static from staticfiles %}
 
+{% block meta_title %}Студенти{% endblock meta_title %}
 
-<!DOCTYPE html>
-<html lang="en">
- <head>
+{% block title %}База Студентів{% endblock title %}
 
+{% block content %}
 
-  <meta charset="UTF-8"/>
-  <title>Сервіс Обліку Студентів</title>
-  <meta name="description"
-    value="Система Обліку Студентів Навчального Закладу" />
-
- <!-- Include Styles -->
-  <link rel="stylesheet"
-     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-
-
-  <link rel="stylesheet" href="{% static "css/main.css" %}">
-
- </head>
-
- <body>
-
- <!--Start Container-->
-  <div class="container">
-
-      <!--Start Header-->
-
-      <div class="row" id="header">
-          <!--Logo-->
-
-          <div class="col-xs-8">
-              <h1>Сервіс обліку студентів</h1>
-          </div>
-
-          <!--Grous Selector-->
-          <div class="col-xs-4" id="group-selector">
-              <strong>Група:</strong>
-              <select>
-				<option value="">Усі Студенти</option>
-				<option value="">МтМ - 21, Подоба Віталій (№ 254)</option>
-				<option value="">МтМ - 22, Корост Андрій (№ 2123)</option>
-			  </select>
-          </div>
-
-      </div>
-
-      <!-- End Header-->
-
-      <!--Start SubHeader-->
-      <div class="row" id="sub-header">
-          <div class="col-xs-12">
-             <ul class="nav nav-tabs" role="tablist">
-				<li role="presentation" class="active"><a href="{%url "home"%}">Студенти</a></li>
-				<li role="presentation"><a href="/journal">Відвідування</a></li>
-				<li role="presentation"><a href="{% url "groups" %}">Групи</a></li>
-			</ul>
-          </div>
-      </div>
-      <!--End SubHeader-->
-
-      <!--Start Main Page Content-->
-      <div class="row" id="Content-colums">
-          <div CLASS="col-xs-12" id="content-colum">
-              <div class="alert alert-warning">Зміни скасовано.</div>
-              <h2>База Студентів</h2>
               <a class="btn btn-primary" href="{% url "students_add" %}">Додати Студента</a>
 
               <div>
@@ -140,27 +82,4 @@
 
               </div>
 
-          </div>
-
-      </div>
-      <!--End Main Page Content-->
-
-      <!--Start Footer-->
-      <div class="row" id="footer">
-          <div class="col-xs-12">
-             &copy Сервіс Обліку Студентів
-          </div>
-      </div>
-
-      <!-- End Container-->
-  </div>
- <!-- End Container-->
-
- <!--JS Section-->
-  <script
-			  src="https://code.jquery.com/jquery-2.2.4.min.js"
-			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-			  crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>"
- </body>
-</html>
+{% endblock content %}
