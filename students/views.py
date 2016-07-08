@@ -9,12 +9,12 @@ def students_list(request):
                  'first_name': u'Грибок',
                  'last_name': u'Подоба',
                  'ticket': 235,
-                 'image': 'img/me.jpeg'},
+                 'image': 'img/me.jpg'},
                 {'id': 2,
                  'first_name': u'Корост',
                  'last_name': u'Андрій',
                  'ticket': 2123,
-                 'image': 'img/me.jpeg'},)
+                 'image': 'img/me.jpg'},)
 
     return render(request, 'students/students_list.html', {'students': students})
 
