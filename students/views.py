@@ -24,8 +24,6 @@ def students_list(request):
     return render(request, 'students/students_list.html', {'students': students})
 
 
-def groups_list(request):
-    return HttpResponse('<h1>Groups Listing</h1>')
 
 
 def students_add(request):
@@ -38,6 +36,22 @@ def students_edit(request, sid):
 
 def students_delete(request, sid):
      return HttpResponse('<h1>Delete Student %s</h1>' % sid)
+
+#Groups Wiews
+
+def groups_list(request):
+    groups = ({'id': 1,
+                'name': 'МтМ21',
+                'leader': 'Подоба'},
+              {'id': 1,
+                'name': 'МтМ22',
+                'leader': 'Лютый'},
+              {'id': 1,
+                'name': 'МтМ23',
+                'leader': 'Гавр'},
+                )
+    return render(request, 'students/groups_list.html', {'groups': groups})
+
 
 
 def groups_add(request):

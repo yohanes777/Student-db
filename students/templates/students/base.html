@@ -55,9 +55,9 @@
       <div class="row" id="sub-header">
           <div class="col-xs-12">
              <ul class="nav nav-tabs" role="tablist">
-				<li role="presentation" class="active"><a href="{%url "home"%}">Студенти</a></li>
-				<li role="presentation"><a href="/journal">Відвідування</a></li>
-				<li role="presentation"><a href="{% url "groups" %}">Групи</a></li>
+				<li role="presentation" {% if request.path == '/' %}class="active"{% endif %}><a href="{% url "home" %}">Студенти</a></li>
+          <li role="presentation" {% if '/journal' in request.path %}class="active"{% endif %}><a href="/journal">Відвідування</a></li>
+          <li role="presentation" {% if '/groups' in request.path %}class="active"{% endif %}><a href="{% url "groups" %}">Групи</a></li>
 			</ul>
           </div>
       </div>
@@ -88,12 +88,16 @@
 
       <!--Start Footer-->
       <div class="row" id="footer">
+
           <div class="col-xs-12">
+
              &copy Сервіс Обліку Студентів
+
           </div>
+
       </div>
 
-      <!-- End Container-->
+      <!--End Footer-->
   </div>
 
 
@@ -103,7 +107,7 @@
 			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 			  crossorigin="anonymous"></script>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>"
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   {% block extra_js %}{% endblock extra_js %}
 
