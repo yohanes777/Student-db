@@ -16,8 +16,18 @@
                        <tr>
                         <th>№</th>
                         <th>Фото</th>
-                        <th>Прізвище</th>
-                        <th>Ім'я</th>
+                        <th>
+                            <a href="{% url "home" %}?order_by=last_name">
+                                {% if request.GET.order_by == 'last_name' %}&uarr;{% endif%}
+                                Прізвище
+                            </a>
+                        </th>
+                        <th>
+                            <a href="{% url "home" %}?order_by=first_name">
+                            {% if request.GET.order_by == 'first_name' %}&uarr;{% endif%}
+                            Ім'я
+                            </a>
+                        </th>
                         <th>№ Білету</th>
                         <th>Дії</th>
                        </tr>
@@ -31,7 +41,12 @@
 
                         <td>{{ forloop.counter }}</td>
 
-                        <td><img height="30" width="30" class="img-circle" src="{% static student.image %}"></td>
+                        <td>
+                            {% if student.photo %}
+                            <img class="img-circle" src="{{ student.photo.url }}" height="30" width="30" />
+                            {% else %}
+                            <img class="img-circle" src="{% static "img/default_user.png" %}" height="30" width="30" />
+                            {% endif %}</td>
 
                         <td><a title="Редагувати" href="{% url "students_edit" student.id %}">{{ student.last_name }}</a></td>
 
