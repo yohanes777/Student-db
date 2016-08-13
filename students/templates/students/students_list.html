@@ -15,7 +15,7 @@
   {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
   <thead>
     <tr>
-      <th>#</th>
+      <th>№</th>
       <th>Фото</th>
       <th>
         <a href="{% url "home" %}?order_by=last_name{% if order_by == 'last_name' and reverse != '1' %}&amp;reverse=1{% endif %}">
